@@ -1,4 +1,4 @@
-import { IsString, MinLength } from 'class-validator';
+import { IsDecimal, IsOptional, IsString, MinLength } from 'class-validator';
 
 export class CreateBookDto {
   @IsString()
@@ -7,9 +7,13 @@ export class CreateBookDto {
 
   @IsString()
   @MinLength(5)
-  author: string;
+  authorName: string;
 
   @IsString()
   @MinLength(5)
-  category: string;
+  categoryName: string;
+
+  @IsOptional()
+  @IsDecimal()
+  basePrice?: number;
 }

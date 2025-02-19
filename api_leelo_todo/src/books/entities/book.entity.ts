@@ -14,12 +14,14 @@ export class Book {
   @Column('decimal', { default: 3.12 })
   basePrice: number;
 
-  @ManyToOne(() => Author, (author) => author.books)
+  @ManyToOne(() => Author, (author) => author.books, { onDelete: 'CASCADE' })
   author: Author;
 
-  @ManyToOne(() => Category, (category) => category.books)
+  @ManyToOne(() => Category, (category) => category.books, {
+    onDelete: 'CASCADE',
+  })
   category: Category;
 
-  @OneToMany(() => Sale, (sale) => sale.book)
+  @OneToMany(() => Sale, (sale) => sale.book, { onDelete: 'CASCADE' })
   sales: Sale[];
 }
