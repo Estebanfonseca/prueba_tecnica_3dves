@@ -8,8 +8,4 @@ export class CreateSaleDto {
   @IsInt()
   @IsPositive()
   quantity: number;
-
-  @IsInt()
-  @IsPositive()
-  total: number;
 }

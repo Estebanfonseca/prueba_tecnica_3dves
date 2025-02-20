@@ -9,9 +9,6 @@ export class Sale {
   @Column()
   quantity: number;
 
-  @Column('decimal')
-  total: number;
-
   @CreateDateColumn()
   dateSale: Date;
 

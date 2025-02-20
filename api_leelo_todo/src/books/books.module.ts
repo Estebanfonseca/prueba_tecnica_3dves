@@ -10,10 +10,17 @@ import { AuthorController } from './controllers/author.controller';
 import { AuthorService } from './services/author.service';
 import { CategoryController } from './controllers/category.controller';
 import { CategoryService } from './services/category.service';
+import { SaleController } from './controllers/sale.controller';
+import { SaleService } from './services/sale.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Book, Category, Author, Sale])],
-  controllers: [BooksController, AuthorController, CategoryController],
-  providers: [BooksService, AuthorService, CategoryService],
+  controllers: [
+    BooksController,
+    AuthorController,
+    CategoryController,
+    SaleController,
+  ],
+  providers: [BooksService, AuthorService, CategoryService, SaleService],
 })
 export class BooksModule {}
