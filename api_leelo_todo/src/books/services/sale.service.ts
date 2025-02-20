@@ -31,11 +31,11 @@ export class SaleService {
   async getTotalByMonth(): Promise<any[]> {
     return await this.saleRepository
       .createQueryBuilder('sale')
-      .select('book.id', 'book_id')
-      .addSelect('book.name', 'book_name')
-      .addSelect('book.basePrice', 'book_basePrice')
-      .addSelect('book.authorId', 'book_authorId')
-      .addSelect('book.categoryId', 'book_categoryId')
+      .select('book.id', 'bookId')
+      .addSelect('book.name', 'bookName')
+      .addSelect('book.basePrice', 'basePrice')
+      .addSelect('book.authorId', 'authorId')
+      .addSelect('book.categoryId', 'categoryId')
       .addSelect("strftime('%m', sale.dateSale)", 'month')
       .addSelect('SUM(sale.quantity * book.basePrice)', 'total')
       .innerJoin('sale.book', 'book')
