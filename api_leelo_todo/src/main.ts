@@ -18,7 +18,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Api Leelo Todo')
-    .setDescription('Api para la gestion de la tienda')
+    .setDescription('Api para la gestion de la tienda de libros Leelo Todo')
     .setVersion('1.0.0')
     .build();
 
